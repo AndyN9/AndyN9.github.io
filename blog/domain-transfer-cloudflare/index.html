@@ -4,10 +4,9 @@ Published: May 18, 2026 </time>  </p> </header> <h2 id="background">Background</
 It was simple, reasonably priced, and just worked.</p>
 <p>Then Google sold the whole operation to Squarespace in 2023.</p>
 <p>I’m not a Squarespace customer. I just had a domain parked there for my GitHub Pages
-site. And over time, the experience degraded: the pricing went up, the DNS management
-UI got worse, and I found myself paying for features I didn’t need.</p>
+site. And over time, I never saw myself using other Squarespace products.</p>
 <p>I’d been meaning to move it to Cloudflare Registrar — where domains are at-cost
-with no markup. This post is the walkthrough I wish I’d had.</p>
+with no markup. This would put me in a familiar ecosystem (as a ex-Cloudflare employee). This post is the walkthrough I wish I’d had.</p>
 <h2 id="the-architecture">The Architecture</h2>
 <p>My setup was simple:</p>
 <ul>
@@ -184,7 +183,7 @@ Otherwise it’ll still show up as managed there.</p>
 <li><strong>Registrar</strong>: Cloudflare (at-cost, no markup)</li>
 <li><strong>DNS</strong>: Cloudflare (free plan, DNS-only for GitHub Pages records)</li>
 <li><strong>Hosting</strong>: GitHub Pages (unchanged)</li>
-<li><strong>Cost</strong>: ~$9/year for .com domains (ICANN fee only)</li>
+<li><strong>Cost</strong>: ~$12/year for .com domains (ICANN fee only)</li>
 </ul>
 <p>The site never went down during the entire process. The DNS handover was seamless
 because both old and new nameservers served the same records. The only real delay
