@@ -10,7 +10,7 @@ Published: May 13, 2026 </time>  </p> </header> <ul>
 <p>A few days ago my personal site was running Gatsby v4 with dependencies so old they made <code>npm audit</code> blush. Today it is on Astro v6, all packages are current, zero vulnerabilities, and the build takes about three seconds.</p>
 <p>I did not do any of that work myself. I told an AI what I wanted and let it run.</p>
 <h2 id="the-setup">The Setup</h2>
-<p>This site started as a Gatsby project in 2022. Gatsby is a great framework but its ecosystem moves fast. By 2025 I had fallen several major versions behind. The README still mentioned <code>npm install --force</code> to work around dependency conflicts. The TODO list had items like “Update to Gatsby 5” and “Fix React console errors” that had been sitting there for years.</p>
+<p>This site started as a Gatsby project in 2022. Gatsby is a great framework but its ecosystem moves fast. By 2025 I had fallen several major versions behind. The README still mentioned <code>npm install --force</code> to work around dependency conflicts. The TODO list had items like &quot;Update to Gatsby 5&quot; and &quot;Fix React console errors&quot; that had been sitting there for years.</p>
 <p>I had been wanting to clean things up but the scope felt overwhelming. A full framework migration? Dependency audits? Testing infrastructure? It was the kind of project that stays on your backlog forever.</p>
 <h2 id="the-migration">The Migration</h2>
 <p>I opened a session with my AI coding agent and described what I wanted: move from Gatsby to Astro, keep the existing content, set up tests, update everything. I told it to create a feature branch first so nothing would break irreversibly.</p>
@@ -26,7 +26,7 @@ Published: May 13, 2026 </time>  </p> </header> <ul>
 </ul>
 <p>The build went from taking over a minute to about three seconds.</p>
 <h2 id="the-bugs-that-followed">The Bugs That Followed</h2>
-<p>The first build succeeded but two issues slipped through. The Inter font files returned 404s because the SCSS config referenced an old directory name that did not exist in the current package. And code blocks had a doubled background color — Shiki (Astro’s syntax highlighter) was applying one theme while the CSS framework added another on top.</p>
+<p>The first build succeeded but two issues slipped through. The Inter font files returned 404s because the SCSS config referenced an old directory name that did not exist in the current package. And code blocks had a doubled background color — Shiki (Astro&#39;s syntax highlighter) was applying one theme while the CSS framework added another on top.</p>
 <p>Both were trivial fixes once identified. The font path needed updating from <code>inter-ui/Inter (web)</code> to <code>inter-ui/web</code>. The code blocks needed a CSS override to let the inner <code>&lt;code&gt;</code> inherit the <code>&lt;pre&gt;</code> background instead of applying its own.</p>
 <p>I pointed the agent at the dev server output, it investigated both issues, and had fixes committed within minutes.</p>
 <h2 id="the-draft-that-would-not-load">The Draft That Would Not Load</h2>

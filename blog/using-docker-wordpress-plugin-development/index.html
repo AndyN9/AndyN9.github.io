@@ -8,7 +8,7 @@ Published: Nov 03, 2022 </time>  </p> </header> <ul>
 </ul>
 <p>For some developers, setting up infrastructure is the last thing a developer wants to do. WordPress, in particular, requires a MySQL database and a PHP environment, the old reliable LAMP stack, to be setup before developers can begin the famous 5 minute WordPress install. While there are solutions like <a href="https://www.mamp.info" target="_blank" rel="noopener noreferrer">MAMP</a> or <a href="https://localwp.com/" target="_blank" rel="noopener noreferrer">Local</a> which can handle the grunt work, I prefer <a href="https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/wordpress" target="_blank" rel="noopener noreferrer">Docker</a> for setting up a local development environment for making WordPress plugins.</p>
 <h2 id="about-and-why-docker">About and Why Docker</h2>
-<p>Docker is a suite of technologies which allows developers to <em>“easily”</em> create application environments via <a href="https://en.wikipedia.org/wiki/OS-level_virtualization" target="_blank" rel="noopener noreferrer">containers</a>. These containers solve the age-old software developer colloquy, <em>“It worked on my machine.”</em> In this guide, I’ll be using <a href="https://docs.docker.com/compose/" target="_blank" rel="noopener noreferrer">Docker Compose</a>, which allows developers to describe the application environment via YAML and then start and stop services via CLI.</p>
+<p>Docker is a suite of technologies which allows developers to <em>&quot;easily&quot;</em> create application environments via <a href="https://en.wikipedia.org/wiki/OS-level_virtualization" target="_blank" rel="noopener noreferrer">containers</a>. These containers solve the age-old software developer colloquy, <em>&quot;It worked on my machine.&quot;</em> In this guide, I&#39;ll be using <a href="https://docs.docker.com/compose/" target="_blank" rel="noopener noreferrer">Docker Compose</a>, which allows developers to describe the application environment via YAML and then start and stop services via CLI.</p>
 <p>Comparing Docker to other local development WordPress environment technologies, I believe there is a higher learning curve with Docker.
 However, I think the advantages exceed the disadvantages, particularly in terms of automation and consistency of the environment.</p>
 <h2 id="prerequisites">Prerequisites</h2>
@@ -49,7 +49,7 @@ However, I think the advantages exceed the disadvantages, particularly in terms 
 <span class="line"><span style="color:#85E89D">volumes</span><span style="color:#E1E4E8">:</span></span>
 <span class="line"><span style="color:#85E89D">  db_data</span><span style="color:#E1E4E8">:</span></span>
 <span class="line"><span style="color:#85E89D">  wordpress_instance</span><span style="color:#E1E4E8">:</span></span></code></pre>
-<p>Copy the above YML configuration to the <code>docker-compose.yml</code> file. Here’s a rundown on what’s going on:</p>
+<p>Copy the above YML configuration to the <code>docker-compose.yml</code> file. Here&#39;s a rundown on what&#39;s going on:</p>
 <ul>
 <li>2 services: <code>db</code> and <code>wordpress</code>
 <ul>
@@ -72,7 +72,7 @@ However, I think the advantages exceed the disadvantages, particularly in terms 
 <p>From the project root, run:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker compose up -d</span></span></code></pre>
 <p>This command will build the services as describe in the <code>docker-compose.yml</code>. The flag <code>-d</code> will run the containers in the background.</p>
-<p>Congratulations! A local WordPress instance should be accessible at <code>http://localhost:8080/</code> and WordPress ‘5-min install’ should now be accessible! After the install, plugin development can commence!</p>
+<p>Congratulations! A local WordPress instance should be accessible at <code>http://localhost:8080/</code> and WordPress &#39;5-min install&#39; should now be accessible! After the install, plugin development can commence!</p>
 <p><strong>NOTE:</strong> If the <code>docker-compose.yml</code> was in a plugin project directory, then the plugin can be activated!</p>
 <p>To stop the WordPress instance container, run:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker compose down</span></span></code></pre>

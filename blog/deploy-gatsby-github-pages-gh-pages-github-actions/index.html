@@ -26,7 +26,7 @@ Modified: May 15, 2026 </time>  </p> </header> <ul>
 <li>files in repo were generated via Gatsby project</li>
 <li>public web root for GitHub Pages
 <ul>
-<li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site</a></li>
+<li>https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site</li>
 </ul>
 </li>
 <li><strong>NOTE:</strong> For this tutorial, the git repo <code>https://github.com/username/username.github.io.git</code> is assumed</li>
@@ -38,7 +38,7 @@ Modified: May 15, 2026 </time>  </p> </header> <ul>
 <ul>
 <li>Create a fine-grained personal access token
 <ul>
-<li><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens</a></li>
+<li>https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens</li>
 <li>Scope the token to <strong>only</strong> the GitHub Pages repo (not the source repo)</li>
 <li><strong>Required permission:</strong> <code>Contents: Read and Write</code></li>
 <li>Fine-grained tokens are repo-scoped and more secure than classic tokens</li>
@@ -46,7 +46,7 @@ Modified: May 15, 2026 </time>  </p> </header> <ul>
 </li>
 <li>For the project repo, store the token as a GitHub Actions secret
 <ul>
-<li><a href="https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions</a></li>
+<li>https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions</li>
 <li><strong>NOTE:</strong> In this tutorial, <code>DEPLOY_TOKEN</code> is used as the key</li>
 </ul>
 </li>
@@ -64,14 +64,14 @@ Modified: May 15, 2026 </time>  </p> </header> <ul>
 <h2 id="setup-deployment">Setup Deployment</h2>
 <p>Now for the fun part! The next two scripts will work in tandem to deploy the Gatsby project to the Github Pages repo.</p>
 <h3 id="making-the-deploy-script">Making the deploy script</h3>
-<p>Add this npm script to the project’s <code>package.json</code>.</p>
+<p>Add this npm script to the project&#39;s <code>package.json</code>.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="json"><code><span class="line"><span style="color:#9ECBFF">&quot;scripts&quot;</span><span style="color:#E1E4E8">: {</span></span>
 <span class="line"><span style="color:#FDAEB7;font-style:italic">  ...</span></span>
 <span class="line"><span style="color:#79B8FF">  &quot;build&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;astro build&quot;</span><span style="color:#E1E4E8">,</span></span>
 <span class="line"><span style="color:#79B8FF">  &quot;deploy&quot;</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">&quot;gh-pages -d dist -b main --dotfiles --nojekyll -r https://$DEPLOY_TOKEN@github.com/username/username.github.io.git&quot;</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
 <ul>
-<li><code>astro build</code> (or your framework’s build command) will build the site into the <code>dist</code> directory</li>
+<li><code>astro build</code> (or your framework&#39;s build command) will build the site into the <code>dist</code> directory</li>
 <li><code>gh-pages</code> will deploy the site with these flag arguments
 <ul>
 <li><code>-d dist</code> is the directory containing the built site</li>
@@ -83,7 +83,7 @@ Modified: May 15, 2026 </time>  </p> </header> <ul>
 </li>
 </ul>
 <h3 id="setting-up-the-github-actions-workflow">Setting up the GitHub Actions workflow</h3>
-<p>Add this yaml file to the project’s <code>.github/workflows</code> directory. Name it <code>deploy.yaml</code>, resulting in <code>.github/workflows/deploy.yaml</code>.</p>
+<p>Add this yaml file to the project&#39;s <code>.github/workflows</code> directory. Name it <code>deploy.yaml</code>, resulting in <code>.github/workflows/deploy.yaml</code>.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Deploy site</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#79B8FF">on</span><span style="color:#E1E4E8">:</span></span>
@@ -134,7 +134,7 @@ Modified: May 15, 2026 </time>  </p> </header> <ul>
 </li>
 </ul>
 <h2 id="2026-updates">2026 Updates</h2>
-<p>This post was originally written in 2022 and updated in 2026. Here’s what changed:</p>
+<p>This post was originally written in 2022 and updated in 2026. Here&#39;s what changed:</p>
 <h3 id="nodejs-24-and-github-actions-deprecations">Node.js 24 and GitHub Actions Deprecations</h3>
 <ul>
 <li><strong>Node 24 is now the default</strong> on GitHub Actions runners. Node 20 reached end-of-life in April 2026 and was removed from runners in September 2026.</li>
@@ -158,7 +158,7 @@ Modified: May 15, 2026 </time>  </p> </header> <ul>
 <li>Without <code>.nojekyll</code>, GitHub Pages runs Jekyll processing which can break static sites.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
-<p>That’s it! Any push to the project repo will trigger a lint → build → test → deploy pipeline. Assuming <code>username.github.io</code> was the repo name and GitHub Pages was configured, there should be a live site at <code>https://username.github.io</code>!</p>
+<p>That&#39;s it! Any push to the project repo will trigger a lint → build → test → deploy pipeline. Assuming <code>username.github.io</code> was the repo name and GitHub Pages was configured, there should be a live site at <code>https://username.github.io</code>!</p>
 <h2 id="additional-resources">Additional Resources</h2>
 <ul>
 <li><a href="https://github.com/actions/setup-node" target="_blank" rel="noopener noreferrer">GitHub Actions setup-node documentation</a></li>
