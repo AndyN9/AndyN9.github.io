@@ -25,6 +25,9 @@
 (function() {
   var t = window.localStorage.getItem('theme');
   var o = window.matchMedia('(prefers-color-scheme: dark)');
-  document.documentElement.setAttribute('data-theme', t || (o && o.matches ? 'dark' : 'light') || 'dark');
+  var theme = t || (o && o.matches ? 'dark' : 'light') || 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+  var btn = document.getElementById('theme-toggle');
+  if (btn) btn.setAttribute('aria-pressed', theme === 'dark');
 })();
-</script><script type="module">(function(){var e=document.getElementById(`theme-toggle`);e&&e.addEventListener(`click`,function(){var e=document.documentElement.getAttribute(`data-theme`)===`dark`?`light`:`dark`;window.localStorage.setItem(`theme`,e),document.documentElement.setAttribute(`data-theme`,e)})})();</script><script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;2ff9d623bbd84c20917447bbe7b4a10c&quot;}"></script>
+</script><script type="module">(function(){var e=document.getElementById(`theme-toggle`);e&&e.addEventListener(`click`,function(){var t=document.documentElement.getAttribute(`data-theme`)===`dark`?`light`:`dark`;window.localStorage.setItem(`theme`,t),document.documentElement.setAttribute(`data-theme`,t),e.setAttribute(`aria-pressed`,t===`dark`)})})();</script><script src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;2ff9d623bbd84c20917447bbe7b4a10c&quot;}"></script>
