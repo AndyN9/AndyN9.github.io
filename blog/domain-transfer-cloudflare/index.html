@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en-US" dir="ltr"><head><script>
+<!DOCTYPE html><html lang="en-US" dir="ltr"><head><!-- Theme-prevention script must stay in <head> and run before first paint;
+         if emitted after the closing body/html tags, the wrong theme flashes on load. --><script>
       (function () {
         var t = window.localStorage.getItem("theme");
         var o = window.matchMedia("(prefers-color-scheme: dark)");
